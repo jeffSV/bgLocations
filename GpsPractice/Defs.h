@@ -14,4 +14,6 @@ const int FADING_POSITION_INDEX = 1;
 const int OUTDATED_POSITION_INDEX = 2;
 const int NUMBER_OF_POSITION_CATEGORIES = 3;
 
+//const char DEFAULT_GREETING[] = "Hello";
+
 #endif

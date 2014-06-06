@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0513393C194252910081BC6F /* UtilsHelperFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0513393B194252910081BC6F /* UtilsHelperFunctions.m */; };
 		05FD49D61940D85D0063468D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05FD49D51940D85D0063468D /* UIKit.framework */; };
 		05FD49D81940D85D0063468D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05FD49D71940D85D0063468D /* Foundation.framework */; };
 		05FD49DA1940D85D0063468D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05FD49D91940D85D0063468D /* CoreGraphics.framework */; };
@@ -24,6 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0513393619424F350081BC6F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0513393719424F3B0081BC6F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0513393819424F4C0081BC6F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0513393919424F4F0081BC6F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0513393A194252910081BC6F /* UtilsHelperFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilsHelperFunctions.h; path = GpsPractice/UtilsHelperFunctions.h; sourceTree = "<group>"; };
+		0513393B194252910081BC6F /* UtilsHelperFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilsHelperFunctions.m; path = GpsPractice/UtilsHelperFunctions.m; sourceTree = "<group>"; };
 		05FD49D11940D85D0063468D /* GpsPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GpsPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05FD49D51940D85D0063468D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		05FD49D71940D85D0063468D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -147,6 +154,8 @@
 				05FD4A031940DD1F0063468D /* CGpsLocInfo.h */,
 				05FD4A041940DD1F0063468D /* CGpsLocInfo.m */,
 				05FD4A061940EB750063468D /* Defs.h */,
+				0513393A194252910081BC6F /* UtilsHelperFunctions.h */,
+				0513393B194252910081BC6F /* UtilsHelperFunctions.m */,
 			);
 			name = Info;
 			sourceTree = "<group>";
@@ -186,6 +195,10 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
+				fr,
+				de,
+				pt,
 			);
 			mainGroup = 05FD49C61940D85D0063468D;
 			productRefGroup = 05FD49D21940D85D0063468D /* Products */;
@@ -222,6 +235,7 @@
 				05FD49FD1940DB050063468D /* CLocInfoViewController.m in Sources */,
 				05FD4A011940DB9B0063468D /* CSVCViewController.m in Sources */,
 				05FD4A051940DD1F0063468D /* CGpsLocInfo.m in Sources */,
+				0513393C194252910081BC6F /* UtilsHelperFunctions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +246,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				05FD49DF1940D85D0063468D /* en */,
+				0513393619424F350081BC6F /* es */,
+				0513393719424F3B0081BC6F /* fr */,
+				0513393819424F4C0081BC6F /* de */,
+				0513393919424F4F0081BC6F /* pt */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -343,6 +361,7 @@
 				05FD49F41940D85E0063468D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

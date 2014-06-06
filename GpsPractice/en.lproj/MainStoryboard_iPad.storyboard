@@ -16,19 +16,19 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="nSI-9S-0l5">
-                                <rect key="frame" x="112" y="20" width="153" height="31"/>
+                                <rect key="frame" x="112" y="87" width="261" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="xXU-9c-dFD">
-                                <rect key="frame" x="112" y="73" width="153" height="31"/>
+                                <rect key="frame" x="112" y="140" width="261" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mot-h2-voZ">
-                                <rect key="frame" x="124" y="137" width="72" height="37"/>
+                                <rect key="frame" x="124" y="204" width="72" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="OK">
@@ -42,12 +42,20 @@
                                     <action selector="OnOK:forEvent:" destination="N1Y-u1-XVv" eventType="touchUpInside" id="huf-EE-eah"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="l7f-zn-N6l">
+                                <rect key="frame" x="169" y="48" width="147" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="l4w-9f-xjU"/>
                     <connections>
+                        <outlet property="lblGreeting" destination="l7f-zn-N6l" id="Dgw-3M-jh4"/>
                         <outlet property="txtbxLatitude" destination="nSI-9S-0l5" id="lHN-hB-oqA"/>
                         <outlet property="txtbxLongitude" destination="xXU-9c-dFD" id="3Wm-le-hAN"/>
                     </connections>
@@ -123,6 +131,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CLocInfoViewController.h"/>
             <relationships>
                 <relationship kind="action" name="OnOK:forEvent:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="lblGreeting" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="txtbxLatitude" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtbxLongitude" candidateClass="UITextField"/>
             </relationships>

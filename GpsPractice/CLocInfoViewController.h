@@ -12,6 +12,8 @@
 
 @interface CLocInfoViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *lblGreeting;
+
 @property (weak, nonatomic) CLLocation *locInfo;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtbxLatitude;

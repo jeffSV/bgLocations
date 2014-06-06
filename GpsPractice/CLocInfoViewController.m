@@ -9,6 +9,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 #import "CLocInfoViewController.h"
+#import "UtilsHelperFunctions.h"
 
 @interface CLocInfoViewController ()
 
@@ -16,6 +17,7 @@
 
 @implementation CLocInfoViewController
 
+@synthesize lblGreeting = _lblGreeting;
 @synthesize locInfo = _locInfo;
 @synthesize txtbxLatitude = _txtbxLatitude;
 @synthesize txtbxLongitude = _txtbxLongitude;
@@ -32,6 +34,16 @@
 	
 	if(self.txtbxLongitude != nil)
 		[self.txtbxLongitude setText:[NSString stringWithFormat:@"%.2lf", self.locInfo.coordinate.longitude]];
+	
+	if( (self.lblGreeting != nil) && ([self.lblGreeting.text caseInsensitiveCompare:@"label"] == NSOrderedSame) )
+	{
+		NSString *strGreeting = [UtilsHelperFunctions retreiveLocalizedStringForKey:@"greeting"];
+		
+		if( (strGreeting != nil) && (strGreeting.length > 0) )
+			[self.lblGreeting setText:strGreeting];
+		else
+			[self.lblGreeting setText:@"Hello"];
+	}
 }
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -54,6 +66,12 @@
 	{
 		[self.txtbxLatitude setText:[NSString stringWithFormat:@"%.2lf", self.locInfo.coordinate.latitude]];
 		[self.txtbxLongitude setText:[NSString stringWithFormat:@"%.2lf", self.locInfo.coordinate.longitude]];
+		
+		if(self.lblGreeting != nil)
+		{
+			NSString *strGreeting = [UtilsHelperFunctions retreiveLocalizedStringForKey:@"greeting"];
+			[self.lblGreeting setText:strGreeting];
+		}
 	}
 }
 
@@ -62,6 +80,7 @@
 {
 	[self setTxtbxLatitude:nil];
 	[self setTxtbxLongitude:nil];
+    [self setLblGreeting:nil];
 	[super viewDidUnload];
 	// Release any retained subviews of the main view.
 }
