@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="oCe-Sl-q8P">
+    <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <development defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+    </dependencies>
+    <scenes>
+        <!--Loc Info View Controller-->
+        <scene sceneID="nPc-he-7M5">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J51-fw-hC1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="N1Y-u1-XVv" customClass="CLocInfoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TpX-lF-sHM">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="l4w-9f-xjU"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-1644" y="1029"/>
+        </scene>
+        <!--Loc Info Table View Controller - Root View Controller-->
+        <scene sceneID="9va-ZG-rjf">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TWB-5w-5Ii" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="12T-Kz-ivf" customClass="CLocInfoTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="yxE-jb-7Rb">
+                        <rect key="frame" x="0.0" y="64" width="320" height="788"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="gpsTableCell" id="gL2-gi-LFf">
+                                <rect key="frame" x="0.0" y="34" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="12T-Kz-ivf" id="cqo-xS-DHu"/>
+                            <outlet property="delegate" destination="12T-Kz-ivf" id="RVA-DB-fYC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="EDZ-f6-dgS"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="-1186" y="-296"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="N0L-5i-291">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I1e-s1-Ktn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="VTn-a7-aOz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="aNY-SP-QwA">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="12T-Kz-ivf" kind="relationship" relationship="rootViewController" id="y0m-No-G0e"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1740" y="-308"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eio-0D-qsp">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7xd-vx-rKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <splitViewController id="oCe-Sl-q8P" customClass="CSVCViewController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <connections>
+                        <segue destination="VTn-a7-aOz" kind="relationship" relationship="masterViewController" id="3q3-vf-llD"/>
+                        <segue destination="N1Y-u1-XVv" kind="relationship" relationship="detailViewController" id="ff3-7e-lnh"/>
+                    </connections>
+                </splitViewController>
+            </objects>
+            <point key="canvasLocation" x="-2826" y="-79"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="CLocInfoTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CLocInfoTableViewController.h"/>
+        </class>
+        <class className="CLocInfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CLocInfoViewController.h"/>
+        </class>
+        <class className="CSVCViewController" superclassName="UISplitViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CSVCViewController.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
