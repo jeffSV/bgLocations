@@ -22,6 +22,7 @@
 	if (self)
 	{
 		// Custom initialization
+		self.delegate = self;
 	}
 
 	return self;
@@ -45,5 +46,9 @@
 {
 	return YES;
 }
+
+#pragma mark - delegate calls
+
+
 
 @end

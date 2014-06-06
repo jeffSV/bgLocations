@@ -130,7 +130,8 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-	CLocInfoTableViewController *vc = nil;
+	CLocInfoViewController *vc = nil;
+
 	if([segue.destinationViewController isKindOfClass:[CLocInfoViewController class]] == FALSE)
 		return;
 		
@@ -150,8 +151,8 @@
 			break;
 	}
 	
-	vc = (CLocInfoTableViewController *)segue.destinationViewController;
-	[self configureDetailedViewWithLocationInfo:nil];
+	vc = (CLocInfoViewController *)segue.destinationViewController;
+	[self configureDetailedViewWithLocationInfo:vc];
 }
 
 -(void)receivedAGpsLocationUpdate
@@ -168,11 +169,15 @@
 			{
 				NSLog(@"%@", vctrl.class);
 			}
-			
+
 			NSLog(@"%@", self.parentViewController.class);
 			
 			if(self.splitViewController != nil)
 				NSLog(@"%@", self.splitViewController.class);
+		}
+		else
+		{
+			vc.locInfo = self.currLoc;
 		}
 }
 
@@ -180,7 +185,11 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-		[self configureDetailedViewWithLocationInfo:nil];
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+		return;
+
+	[self configureDetailedViewWithLocationInfo:nil];
+	
 	switch (indexPath.section)
 	{
 		case RECENT_POSITION_INDEX:
@@ -196,6 +205,12 @@
 			self.currLoc = nil;
 			break;
 	}
+	
+	if(self.splitViewController == nil)
+		return;
+	
+	CLocInfoViewController *vc = [self.splitViewController.viewControllers objectAtIndex:1];
+	vc.locInfo = self.currLoc;
 }
 
 @end
