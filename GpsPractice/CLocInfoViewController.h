@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) CLLocation *locInfo;
 
+@property (weak, nonatomic) IBOutlet UITextField *txtbxPassword;
 @property (weak, nonatomic) IBOutlet UITextField *txtbxLatitude;
 @property (weak, nonatomic) IBOutlet UITextField *txtbxLongitude;
 

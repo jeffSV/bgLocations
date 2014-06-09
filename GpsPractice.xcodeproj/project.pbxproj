@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0513393C194252910081BC6F /* UtilsHelperFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0513393B194252910081BC6F /* UtilsHelperFunctions.m */; };
+		0555AF851945F53E000F1145 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0555AF841945F53E000F1145 /* Security.framework */; };
+		0555AF8A1945F73E000F1145 /* CSecurityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0555AF891945F73E000F1145 /* CSecurityManager.m */; };
 		05FD49D61940D85D0063468D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05FD49D51940D85D0063468D /* UIKit.framework */; };
 		05FD49D81940D85D0063468D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05FD49D71940D85D0063468D /* Foundation.framework */; };
 		05FD49DA1940D85D0063468D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05FD49D91940D85D0063468D /* CoreGraphics.framework */; };
@@ -31,6 +33,9 @@
 		0513393919424F4F0081BC6F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0513393A194252910081BC6F /* UtilsHelperFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilsHelperFunctions.h; path = GpsPractice/UtilsHelperFunctions.h; sourceTree = "<group>"; };
 		0513393B194252910081BC6F /* UtilsHelperFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilsHelperFunctions.m; path = GpsPractice/UtilsHelperFunctions.m; sourceTree = "<group>"; };
+		0555AF841945F53E000F1145 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0555AF881945F73E000F1145 /* CSecurityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSecurityManager.h; path = GpsPractice/CSecurityManager.h; sourceTree = "<group>"; };
+		0555AF891945F73E000F1145 /* CSecurityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSecurityManager.m; path = GpsPractice/CSecurityManager.m; sourceTree = "<group>"; };
 		05FD49D11940D85D0063468D /* GpsPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GpsPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05FD49D51940D85D0063468D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		05FD49D71940D85D0063468D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -62,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0555AF851945F53E000F1145 /* Security.framework in Frameworks */,
 				05FD49F61940D8690063468D /* CoreLocation.framework in Frameworks */,
 				05FD49D61940D85D0063468D /* UIKit.framework in Frameworks */,
 				05FD49D81940D85D0063468D /* Foundation.framework in Frameworks */,
@@ -72,9 +78,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0555AF871945F71B000F1145 /* Sec */ = {
+			isa = PBXGroup;
+			children = (
+				0555AF881945F73E000F1145 /* CSecurityManager.h */,
+				0555AF891945F73E000F1145 /* CSecurityManager.m */,
+			);
+			name = Sec;
+			sourceTree = "<group>";
+		};
 		05FD49C61940D85D0063468D = {
 			isa = PBXGroup;
 			children = (
+				0555AF871945F71B000F1145 /* Sec */,
 				05FD4A021940DD070063468D /* Info */,
 				05FD49F71940D9170063468D /* Table */,
 				05FD49DB1940D85D0063468D /* GpsPractice */,
@@ -94,6 +110,7 @@
 		05FD49D41940D85D0063468D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0555AF841945F53E000F1145 /* Security.framework */,
 				05FD49F51940D8690063468D /* CoreLocation.framework */,
 				05FD49D51940D85D0063468D /* UIKit.framework */,
 				05FD49D71940D85D0063468D /* Foundation.framework */,
@@ -236,6 +253,7 @@
 				05FD4A011940DB9B0063468D /* CSVCViewController.m in Sources */,
 				05FD4A051940DD1F0063468D /* CGpsLocInfo.m in Sources */,
 				0513393C194252910081BC6F /* UtilsHelperFunctions.m in Sources */,
+				0555AF8A1945F73E000F1145 /* CSecurityManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

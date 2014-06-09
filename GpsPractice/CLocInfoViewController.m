@@ -9,6 +9,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 #import "CLocInfoViewController.h"
+#import "CSecurityManager.h"
 #import "UtilsHelperFunctions.h"
 
 @interface CLocInfoViewController ()
@@ -21,6 +22,7 @@
 @synthesize locInfo = _locInfo;
 @synthesize txtbxLatitude = _txtbxLatitude;
 @synthesize txtbxLongitude = _txtbxLongitude;
+@synthesize txtbxPassword = _txtbxPassword;
 
 -(void)setLocInfo:(CLLocation *)paramLocInfo
 {
@@ -80,7 +82,8 @@
 {
 	[self setTxtbxLatitude:nil];
 	[self setTxtbxLongitude:nil];
-    [self setLblGreeting:nil];
+	[self setLblGreeting:nil];
+	[self setTxtbxPassword:nil];
 	[super viewDidUnload];
 	// Release any retained subviews of the main view.
 }
@@ -90,16 +93,32 @@
 	return YES;
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	if(self.txtbxLatitude.isFirstResponder == TRUE)
+		[self.txtbxLatitude resignFirstResponder];
+	else if(self.txtbxLongitude.isFirstResponder == TRUE)
+		[self.txtbxLongitude resignFirstResponder];
+	else if(self.txtbxPassword.isFirstResponder == TRUE)
+		[self.txtbxPassword resignFirstResponder];
+}
+
 -(IBAction)OnOK:(UIButton *)sender forEvent:(UIEvent *)event
 {
 	if(self.txtbxLatitude.isFirstResponder == TRUE)
 		[self.txtbxLatitude resignFirstResponder];
 	else if(self.txtbxLongitude.isFirstResponder == TRUE)
 		[self.txtbxLongitude resignFirstResponder];
-	
-	NSLog(@"OnOK");
 
-	
+	CSecurityManager *secMgr = [[CSecurityManager alloc]init];
+
+	if([secMgr findInKeyChain] == FALSE)
+		NSLog(@"Bye");
+
+//	if([secMgr configureAndSavePasswordData:nil attribs:nil] == FALSE)
+//		NSLog(@"Bye");
+
+	NSLog(@"OnOK");	
 }
 
 @end

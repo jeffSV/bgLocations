@@ -75,7 +75,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dRY-ul-cKD">
-                                <rect key="frame" x="18" y="169" width="72" height="37"/>
+                                <rect key="frame" x="24" y="231" width="72" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="OK">
@@ -96,6 +96,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" id="GLG-Ny-USC">
+                                <rect key="frame" x="24" y="192" width="276" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -104,6 +110,7 @@
                         <outlet property="lblGreeting" destination="5EE-wg-yBO" id="0iY-Km-CJP"/>
                         <outlet property="txtbxLatitude" destination="8Wt-zR-pf8" id="G1o-UH-Rg8"/>
                         <outlet property="txtbxLongitude" destination="gNm-Wg-IEs" id="YHx-4m-IIy"/>
+                        <outlet property="txtbxPassword" destination="GLG-Ny-USC" id="NZi-dd-OJc"/>
                     </connections>
                 </viewController>
             </objects>
@@ -128,6 +135,21 @@
             <point key="canvasLocation" x="20" y="44"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CLocInfoTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CLocInfoTableViewController.h"/>
+        </class>
+        <class className="CLocInfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CLocInfoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="OnOK:forEvent:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="lblGreeting" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="txtbxLatitude" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtbxLongitude" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtbxPassword" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
