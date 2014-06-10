@@ -16,7 +16,7 @@
 #import "CSecurityManager.h"
 
 //Unique string used to identify the keychain item:
-static const UInt8 kKeychainItemIdentifier[] = "com.foo.fooAppKeychainEntry\0";
+static const UInt8 strArrKeychainItemIdentifier[] = "com.foo.fooAppKeychainEntry\0";
 
 @interface CSecurityManager()
 	@property(nonatomic, strong) NSMutableDictionary *keychainItemData;
@@ -52,10 +52,10 @@ static const UInt8 kKeychainItemIdentifier[] = "com.foo.fooAppKeychainEntry\0";
 		// The kSecAttrGeneric attribute is used to store a unique string that is used
 		// to easily identify and find this keychain item. The string is first
 		// converted to an NSData object:
-		NSData *keychainItemID = [NSData dataWithBytes:kKeychainItemIdentifier length:strlen((const char *)kKeychainItemIdentifier)];
+		NSData *keychainItemID = [NSData dataWithBytes:strArrKeychainItemIdentifier length:strlen((const char *)strArrKeychainItemIdentifier)];
 		
 		[_dictGenericPasswordQuery setObject:keychainItemID forKey:(__bridge id)kSecAttrGeneric];
-		
+
 		// Return the attributes of the first match only:
 		[_dictGenericPasswordQuery setObject:(__bridge id)kSecMatchLimitOne forKey:(__bridge id)kSecMatchLimit];
 		
